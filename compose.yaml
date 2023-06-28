@@ -1,0 +1,12 @@
+services:
+  test_app:
+    build:
+      context: .
+      dockerfile: ./dockerfile
+    volumes:
+      - type: bind
+        source: "."
+        target: "/workspace"
+    tty: true
+    env_file:
+      - .env
